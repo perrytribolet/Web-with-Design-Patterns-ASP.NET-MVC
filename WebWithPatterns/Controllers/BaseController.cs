@@ -9,10 +9,10 @@ namespace WebWithPatterns.Controllers
 {
     public class BaseController: Controller
     {
-        public object GetModel<T>(ModelGetter<T> modelGetter)
+        public T GetModel<T>(ModelGetter<T> modelGetter)
         {
             modelGetter.Execute();
-            return modelGetter.GetModel();
+            return modelGetter.GetModel().Value;
         }
     }
 }

@@ -7,6 +7,16 @@ namespace WebWithPatterns.CompositeCommands
 {
     public abstract class ModelGetter<T> : CommandBranch
     {
-        public abstract T GetModel();
+        protected RefWrapper<T> _receiver;
+
+        public ModelGetter(RefWrapper<T> receiver)
+        {
+            _receiver = receiver;
+        }
+
+        public virtual RefWrapper<T> GetModel() {
+            base.Execute();
+            return _receiver;
+        }
     }
 }

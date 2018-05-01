@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebWithPatterns.Models
 {
-    public class Widget
+    public class President
     {
         public int Id { get; set; }
         public string Name { get; set; }

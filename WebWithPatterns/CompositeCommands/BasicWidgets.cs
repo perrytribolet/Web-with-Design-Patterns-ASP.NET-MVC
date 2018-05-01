@@ -8,29 +8,29 @@ namespace WebWithPatterns.CompositeCommands
 {
     public class BasicWidgets : Component
     {
-        private RefWrapper<List<Widget>> _WidgetsRef;
+        private RefWrapper<IList<President>> _WidgetsRef;
 
-        public BasicWidgets(RefWrapper<List<Widget>> widgetsRef)
+        public BasicWidgets(RefWrapper<IList<President>> widgetsRef)
         {
             _WidgetsRef = widgetsRef;
         }
         public override void Execute()
         {
-            _WidgetsRef.Value = new List<Widget>
+            _WidgetsRef.Value = new List<President>
             {
-                new Widget{Id=42,Name="Clinton"},
-                new Widget{Id=43,Name="Bush"},
-                new Widget{Id=44, Name="Obama"}
+                new President{Id=42,Name="Clinton"},
+                new President{Id=43,Name="Bush"},
+                new President{Id=44, Name="Obama"}
             };
         }
 
-        private void Reassign(ref List<Widget> widgets)
+        private void Reassign(ref List<President> widgets)
         {
-            widgets = new List<Widget>
+            widgets = new List<President>
             {
-                new Widget{Id=42,Name="Clinton"},
-                new Widget{Id=43,Name="Bush"},
-                new Widget{Id=44, Name="Obama"}
+                new President{Id=42,Name="Clinton"},
+                new President{Id=43,Name="Bush"},
+                new President{Id=44, Name="Obama"}
             };
         }
     }

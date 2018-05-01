@@ -13,7 +13,11 @@ namespace WebWithPatterns.Controllers
     {
         public IActionResult Data()
         {
-            return View(GetModel(new WidgetGetter()));
+            RefWrapper<IList<President>> widgets = new RefWrapper<IList<President>>
+            {
+                Value = new List<President>()
+            };
+            return View(GetModel(new WidgetGetter(widgets)));
         }
 
         public IActionResult Index()
