@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Widget>
+@{
+    ViewData["Title"] = "Data";
+}
+
+<h2>Data</h2>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var w in Model)
+        {
+            <tr>
+                <td>@w.Id</td>
+                <td>@w.Name</td>
+            </tr>
+
+        }
+    <tbody>
+
+</table>
+
